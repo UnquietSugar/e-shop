@@ -4,9 +4,9 @@ const Home = () => {
 	return (
 		<div>
 			Welcome to our shop!
-			<p>
+			<h1>
 				You are probably interested in <a href='/products/a'>A</a>.
-			</p>
+			</h1>
 			<p>
 				Check out the newest product <a href='/products/b'>B</a>!
 			</p>

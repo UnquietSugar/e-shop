@@ -7,7 +7,7 @@ import Product from './Pages/ProductPage/Product';
 const Routs = () => {
 	return useRoutes([
 		{
-			path: '/',
+			path: '/home',
 			element: <Home />,
 		},
 		{

@@ -1,18 +1,23 @@
-import React, { FC } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React, { FC, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import TopNav from './Components/TopNav';
 import Routs from './Routs';
-
-function cartItems() {
-	return [];
-}
+import initAxios from './utilities/initAxios';
 
 const App: FC = () => {
+	const navigate = useNavigate();
+	const { pathname } = useLocation();
+
+	initAxios();
+
+	useEffect(() => {
+		if (pathname === '/') navigate('/home');
+	}, []);
 	return (
-		<BrowserRouter>
+		<main>
 			<TopNav />
 			<Routs />
-		</BrowserRouter>
+		</main>
 	);
 };
 

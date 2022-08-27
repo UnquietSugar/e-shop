@@ -9,7 +9,7 @@ const Product = () => {
 			<button onClick={() => console.warn('Not implemented!')}>Add to cart</button>
 
 			<div>
-				<img src={`${process.env.PUBLIC_URL}/images/b.jpg`} width={640} />
+				<img src={`${process.env.PUBLIC_URL}/images/b.jpg`} width={640} alt='asd' />
 			</div>
 		</div>
 	);

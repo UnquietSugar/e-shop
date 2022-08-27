@@ -2,20 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
 import { matchPath, useLocation } from 'react-router-dom';
+import { selectUser } from '../redux/store';
+import { useSelector } from 'react-redux';
 
 const TopNav = () => {
 	const { pathname } = useLocation();
+	const user = useSelector(selectUser);
 
 	const match = (path: string) =>
 		path ? !!matchPath({ path, end: false }, pathname) : false;
 
 	const getLiStyle = (path: string) =>
-		cx(
-			'px-5',
-			match(path) ? 'underline text-color-c' : 'text-color-b hover:text-color-c'
-		);
+		cx('px-5', match(path) ? 'text-color-d' : 'text-color-b hover:text-color-c');
 
-	console.log(pathname);
 	return (
 		<header className='flex justify-between py-3 px-10 bg-color-a font-roboto'>
 			<p className='text-white text-3xl'>90's shop</p>
@@ -25,7 +24,14 @@ const TopNav = () => {
 						<Link to='/home'>Home</Link>
 					</li>
 					<li className={getLiStyle('/cart')}>
-						<Link to='/cart'>Cart 0 items</Link>
+						<Link to='/cart'>
+							<span>Cart</span>
+							{user.cartItems.length > 0 && (
+								<span className='text-sm text-color-d align-text-top'>
+									<b>{user.cartItems.length}</b>
+								</span>
+							)}
+						</Link>
 					</li>
 				</ul>
 			</nav>

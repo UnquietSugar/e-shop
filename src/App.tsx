@@ -12,7 +12,8 @@ const App: FC = () => {
 
 	useEffect(() => {
 		if (pathname === '/') navigate('/home');
-	}, []);
+	}, [navigate, pathname]);
+
 	return (
 		<main>
 			<TopNav />

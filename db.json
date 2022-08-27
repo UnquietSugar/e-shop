@@ -3,12 +3,38 @@
 		{
 			"id": 1,
 			"title": "Product A",
-			"image": "a.jpg"
+			"image": "images/a.jpg",
+			"price": "20"
 		},
 		{
 			"id": 2,
 			"title": "Product B",
-			"image": "b.jpg"
+			"image": "images/b.jpg",
+			"price": "30"
+		},
+		{
+			"id": 3,
+			"title": "Product C",
+			"image": "images/a.jpg",
+			"price": "20"
+		},
+		{
+			"id": 4,
+			"title": "Product D",
+			"image": "images/b.jpg",
+			"price": "30"
+		},
+		{
+			"id": 5,
+			"title": "Product E",
+			"image": "images/a.jpg",
+			"price": "20"
+		},
+		{
+			"id": 6,
+			"title": "Product F",
+			"image": "images/b.jpg",
+			"price": "30"
 		}
 	]
 }

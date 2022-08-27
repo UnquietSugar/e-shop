@@ -17,14 +17,14 @@ const ProductCard: FC<{ product: IProduct }> = ({ product }) => {
 	};
 	return (
 		<div
+			className='p-5 flex justify-between bg-color-b rounded mb-5 hover:brightness-105 cursor-pointer transition'
 			onClick={onGoToProduct}
-			className='p-5 flex justify-between bg-color-b rounded mb-5'
 			style={{ width: 450, height: 200 }}>
 			<div className='flex flex-col justify-between mr-5'>
 				<h1>Name: {product.title}</h1>
 				<p>Price: {product.price}$</p>
 				<button
-					className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-color-a py-2 px-4 border border-blue-500 hover:border-transparent rounded'
+					className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-color-a py-2 px-4 border border-blue-500 hover:border-transparent  rounded'
 					onClick={onAddToCart}>
 					Add to cart
 				</button>

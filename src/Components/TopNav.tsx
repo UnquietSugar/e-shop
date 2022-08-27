@@ -13,11 +13,14 @@ const TopNav = () => {
 		path ? !!matchPath({ path, end: false }, pathname) : false;
 
 	const getLiStyle = (path: string) =>
-		cx('px-5', match(path) ? 'text-color-d' : 'text-color-b hover:text-color-c');
+		cx(
+			'px-5',
+			match(path) ? 'text-color-d' : 'text-color-b hover:text-color-c transition'
+		);
 
 	return (
 		<header className='flex justify-between py-3 px-10 bg-color-a font-roboto'>
-			<p className='text-white text-3xl'>90's shop</p>
+			<p className='text-white text-3xl text-bold'>THE SHOP</p>
 			<nav className='px-10'>
 				<ul className='flex list-none text-2xl'>
 					<li className={getLiStyle('/home')}>
@@ -26,9 +29,9 @@ const TopNav = () => {
 					<li className={getLiStyle('/cart')}>
 						<Link to='/cart'>
 							<span>Cart</span>
-							{user.cartItems.length > 0 && (
+							{user.totalItems > 0 && (
 								<span className='text-sm text-color-d align-text-top'>
-									<b>{user.cartItems.length}</b>
+									<b>{user.totalItems}</b>
 								</span>
 							)}
 						</Link>

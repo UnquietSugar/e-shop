@@ -40,13 +40,9 @@ In the project directory, you can run:
 
 Installs all needed packages for this project.
 
-### `npm i json-server`
-
-Installs package which mocks backend api. Without it app will not work.
-
 ### `npm run my-server`
 
-Runs server on port 3001.
+Runs json-server on port 3001. Server needs to be running in order to access all features of the app.
 
 ### `npm start`
 

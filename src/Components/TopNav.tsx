@@ -24,10 +24,12 @@ const TopNav = () => {
 			<nav className='px-10'>
 				<ul className='flex list-none text-2xl'>
 					<li className={getLiStyle('/home')}>
-						<Link to='/home'>Home</Link>
+						<Link to='/home' role='link'>
+							Home
+						</Link>
 					</li>
 					<li className={getLiStyle('/cart')}>
-						<Link to='/cart'>
+						<Link to='/cart' role='link'>
 							<span>Cart</span>
 							{user.totalItems > 0 && (
 								<span className='text-sm text-color-d align-text-top'>

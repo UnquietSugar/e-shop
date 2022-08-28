@@ -7,10 +7,10 @@ import IProduct from '../../types/IProduct';
 const Home = () => {
 	const { products, isFetchingProducts, error } = useFetchProducts();
 
-	if (isFetchingProducts) return <Loader />;
-
 	if (error)
 		return <div className='grid h-screen place-items-center'>No products to show</div>;
+
+	if (isFetchingProducts) return <Loader />;
 
 	return (
 		<div className='px-20 py-10 grid grid-cols-3 m-auto' style={{ maxWidth: 1700 }}>

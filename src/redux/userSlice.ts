@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IUser } from '../types/IUser';
 
 const initialUserState: IUser = {
-	id: 99,
+	id: 99, // Since no user functionality is implemented user ID is hardcoded. It's also hardcoded in db.json
 	cartItems: [],
 	totalItems: 0,
 	totalPrice: 0,

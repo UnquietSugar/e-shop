@@ -5,7 +5,7 @@ import useFetchSelectedProducts from '../../hooks/useFetchSelectedProducts';
 import IProduct from '../../types/IProduct';
 import CartItem from './CartItem';
 import Swal from 'sweetalert2';
-import buyCartItems from '../../apiCalls.ts/buyCartItems';
+import buyCartItems from '../../service/buyCartItems';
 
 const Cart: FC = () => {
 	const user = useSelector(selectUser);

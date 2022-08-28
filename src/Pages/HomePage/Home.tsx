@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { setConstantValue } from 'typescript';
-import Loader from '../../Components/Loader';
-import ProductCard from '../../Components/ProductCard';
+import Loader from '../../components/Loader';
+import ProductCard from '../../components/ProductCard';
 import useFetchProducts from '../../hooks/useFetchProducts';
 import IProduct from '../../types/IProduct';
 

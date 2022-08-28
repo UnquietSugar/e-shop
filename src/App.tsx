@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import TopNav from './Components/TopNav';
+import TopNav from './components/TopNav';
 import Routs from './Routs';
 import initAxios from './utilities/initAxios';
 

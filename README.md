@@ -18,11 +18,11 @@ see the total amount for payment.
 
 ## Notes & Requirements
 
-* You can spend as much time as you want.
-* You may refactor not only the application code, but the tests too. Keep in mind that test code is still code that
-needs to be maintained.
-* Use git to track your changes. **Fork or clone this repository** and commit often.
-* When finished, send us the link or the zip of the project via e-mail.
+- You can spend as much time as you want.
+- You may refactor not only the application code, but the tests too. Keep in mind that test code is still code that
+  needs to be maintained.
+- Use git to track your changes. **Fork or clone this repository** and commit often.
+- When finished, send us the link or the zip of the project via e-mail.
 
 Good luck!
 
@@ -35,6 +35,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installs all needed packages for this project.
+
+### `npm i json-server`
+
+Installs package which mocks backend api.
+
+### `npm run my-server`
+
+Runs server.
 
 ### `npm start`
 

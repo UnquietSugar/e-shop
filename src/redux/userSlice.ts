@@ -2,8 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IUser } from '../types/IUser';
 
 const initialUserState: IUser = {
+	id: 99,
 	cartItems: [],
 	totalItems: 0,
+	totalPrice: 0,
 };
 
 export const userSlice = createSlice({
@@ -24,15 +26,24 @@ export const userSlice = createSlice({
 			const item = state.cartItems.find((x) => x.itemId === action.payload);
 			if (item) {
 				const index = state.cartItems.indexOf(item);
-				state.cartItems[index].itemCount++;
-			} else {
-				state.cartItems = state.cartItems.filter((x) => x !== item);
+				if (state.cartItems[index].itemCount > 1) {
+					state.cartItems[index].itemCount--;
+				} else {
+					state.cartItems = state.cartItems.filter((x) => x !== item);
+				}
 			}
 			state.totalItems--;
+		},
+		totalPriceAdd: (state, action: PayloadAction<number>) => {
+			state.totalPrice += Number(action.payload);
+		},
+		totalPriceSubtract: (state, action: PayloadAction<number>) => {
+			state.totalPrice -= Number(action.payload);
 		},
 	},
 });
 
-export const { addToCart, removeFromCart } = userSlice.actions;
+export const { addToCart, removeFromCart, totalPriceAdd, totalPriceSubtract } =
+	userSlice.actions;
 
 export default userSlice.reducer;

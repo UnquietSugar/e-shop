@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { setConstantValue } from 'typescript';
+import Loader from '../../Components/Loader';
 import ProductCard from '../../Components/ProductCard';
 import useFetchProducts from '../../hooks/useFetchProducts';
 import IProduct from '../../types/IProduct';
 
 const Home = () => {
-	const { products, isFetchingProducts, error, setState } = useFetchProducts();
+	const { products, isFetchingProducts, error } = useFetchProducts();
 
-	if (isFetchingProducts) return <div>Loading</div>;
+	if (isFetchingProducts) return <Loader />;
 
 	if (error || !products) return <div>No products to show</div>;
 

@@ -4,6 +4,8 @@ export interface ICartItem {
 }
 
 export interface IUser {
+	id: number;
 	cartItems: ICartItem[];
 	totalItems: number;
+	totalPrice: number;
 }

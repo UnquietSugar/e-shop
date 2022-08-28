@@ -1,27 +1,63 @@
-import React from 'react';
+import React, { FC, memo, useEffect, useState } from 'react';
 import { selectUser } from '../../redux/store';
 import { useSelector } from 'react-redux';
-import useFetchCartItems from '../../hooks/useFetchCartItems';
+import useFetchSelectedProducts from '../../hooks/useFetchSelectedProducts';
 import IProduct from '../../types/IProduct';
 import CartItem from './CartItem';
+import Swal from 'sweetalert2';
+import buyCartItems from '../../apiCalls.ts/buyCartItems';
 
-const Cart = () => {
+const Cart: FC = () => {
+	const [totalPrice, setTotalPrice] = useState<number>(0);
 	const user = useSelector(selectUser);
-	const { cartItems, isFetchingCartItems, error } = useFetchCartItems(user.cartItems);
+	const { products, error } = useFetchSelectedProducts(user.cartItems);
 
-	if (!cartItems) return <div>You have nothing on your cart.</div>;
+	if (!products)
+		return (
+			<div className='grid h-screen place-items-center'>
+				You have nothing on your cart.
+			</div>
+		);
 
-	if (isFetchingCartItems) return <div>Loading</div>;
+	if (error)
+		return <div className='grid h-screen place-items-center'>No products to show</div>;
 
-	if (error) return <div>No products to show</div>;
+	const onBuy = async () => {
+		const { isConfirmed } = await Swal.fire({
+			title: 'Are you sure?',
+			text: `You won't be able to revert this! \n Your totla is ${user.totalPrice}$.`,
+			showCancelButton: true,
+		});
+		if (isConfirmed) {
+			try {
+				const resStatus = await buyCartItems(user.id, user.cartItems);
+				console.log(resStatus);
+			} catch (e) {
+				alert(e);
+			}
+		}
+	};
 
 	return (
-		<div className='px-20 py-10 m-auto' style={{ maxWidth: 1700 }}>
-			{cartItems.map((cartItem: IProduct) => (
-				<CartItem cartItem={cartItem} user={user} />
+		<div className='px-20 py-10 m-auto' style={{ maxWidth: 1000 }}>
+			<div className='flex text-lg font-bold py-3 border-b'>
+				<p className='mx-10 flex-1'>Price</p>
+				<p className='mx-10 flex-1'>Product name</p>
+				<p className='mx-10 flex-1'>Total count</p>
+			</div>
+			{products.map((cartItem: IProduct) => (
+				<CartItem cartItem={cartItem} user={user} key={cartItem.id} />
 			))}
+			<div className='mt-10 flex justify-between'>
+				<div>Total price: {user.totalPrice}$</div>
+				<button
+					className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-color-a py-2 px-4 border border-blue-500 hover:border-transparent  rounded'
+					onClick={onBuy}>
+					Buy
+				</button>
+			</div>
 		</div>
 	);
 };
 
-export default Cart;
+export default memo(Cart);

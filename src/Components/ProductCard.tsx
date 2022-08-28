@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import IProduct from '../types/IProduct';
-import { addToCart } from '../redux/userSlice';
+import { addToCart, totalPriceAdd } from '../redux/userSlice';
 import { useDispatch } from 'react-redux';
 
-const ProductCard: FC<{ product: IProduct }> = ({ product }) => {
+const ProductCard: FC<{ product: IProduct; isPreview?: boolean }> = ({
+	product,
+	isPreview = false,
+}) => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
@@ -14,6 +17,7 @@ const ProductCard: FC<{ product: IProduct }> = ({ product }) => {
 	const onAddToCart = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		e.stopPropagation();
 		dispatch(addToCart(product.id));
+		dispatch(totalPriceAdd(product.price));
 	};
 	return (
 		<div
@@ -22,12 +26,18 @@ const ProductCard: FC<{ product: IProduct }> = ({ product }) => {
 			style={{ width: 450, height: 200 }}>
 			<div className='flex flex-col justify-between mr-5'>
 				<h1>Name: {product.title}</h1>
-				<p>Price: {product.price}$</p>
-				<button
-					className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-color-a py-2 px-4 border border-blue-500 hover:border-transparent  rounded'
-					onClick={onAddToCart}>
-					Add to cart
-				</button>
+				{!isPreview && (
+					<div className='flex flex-col'>
+						<p className='mb-5'>
+							Price: <i>{product.price}$</i>
+						</p>
+						<button
+							className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-color-a py-2 px-4 border border-blue-500 hover:border-transparent rounded'
+							onClick={onAddToCart}>
+							Add to cart
+						</button>
+					</div>
+				)}
 			</div>
 
 			<div

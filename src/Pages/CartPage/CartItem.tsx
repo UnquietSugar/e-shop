@@ -33,7 +33,7 @@ const CartItem: FC<ICartItem> = ({ cartItem, user }) => {
 	useEffect(() => {
 		const count = user.cartItems.find((x) => x.itemId === cartItem.id)?.itemCount;
 		setItemCount(count);
-	});
+	}, [setItemCount]);
 	return (
 		<div className='flex text-lg  py-3 border-b border-light-gray'>
 			<p className='mx-10 flex-1'>{cartItem.price}$</p>

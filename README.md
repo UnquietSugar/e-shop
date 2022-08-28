@@ -42,11 +42,11 @@ Installs all needed packages for this project.
 
 ### `npm i json-server`
 
-Installs package which mocks backend api.
+Installs package which mocks backend api. Without it app will not work.
 
 ### `npm run my-server`
 
-Runs server.
+Runs server on port 3001.
 
 ### `npm start`
 

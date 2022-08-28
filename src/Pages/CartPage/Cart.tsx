@@ -1,4 +1,4 @@
-import React, { FC, memo, useEffect, useState } from 'react';
+import React, { FC, memo } from 'react';
 import { selectUser } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import useFetchSelectedProducts from '../../hooks/useFetchSelectedProducts';
@@ -8,7 +8,6 @@ import Swal from 'sweetalert2';
 import buyCartItems from '../../apiCalls.ts/buyCartItems';
 
 const Cart: FC = () => {
-	const [totalPrice, setTotalPrice] = useState<number>(0);
 	const user = useSelector(selectUser);
 	const { products, error } = useFetchSelectedProducts(user.cartItems);
 

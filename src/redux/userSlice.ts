@@ -35,15 +35,20 @@ export const userSlice = createSlice({
 			state.totalItems--;
 		},
 		totalPriceAdd: (state, action: PayloadAction<number>) => {
-			state.totalPrice += Number(action.payload);
+			state.totalPrice += action.payload;
 		},
 		totalPriceSubtract: (state, action: PayloadAction<number>) => {
-			state.totalPrice -= Number(action.payload);
+			state.totalPrice -= action.payload;
+		},
+		resetCart: (state) => {
+			state.totalPrice = 0;
+			state.cartItems = [];
+			state.totalItems = 0;
 		},
 	},
 });
 
-export const { addToCart, removeFromCart, totalPriceAdd, totalPriceSubtract } =
+export const { addToCart, removeFromCart, totalPriceAdd, totalPriceSubtract, resetCart } =
 	userSlice.actions;
 
 export default userSlice.reducer;

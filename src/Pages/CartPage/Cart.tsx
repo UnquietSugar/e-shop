@@ -1,13 +1,17 @@
 import React, { FC, memo } from 'react';
 import { selectUser } from '../../redux/store';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetCart } from '../../redux/userSlice';
 import useFetchSelectedProducts from '../../hooks/useFetchSelectedProducts';
 import IProduct from '../../types/IProduct';
 import CartItem from './CartItem';
 import Swal from 'sweetalert2';
 import buyCartItems from '../../service/buyCartItems';
+import { useNavigate } from 'react-router-dom';
 
 const Cart: FC = () => {
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
 	const user = useSelector(selectUser);
 	const { products, error } = useFetchSelectedProducts(user.cartItems);
 
@@ -31,8 +35,10 @@ const Cart: FC = () => {
 			try {
 				const resStatus = await buyCartItems(user.id, user.cartItems);
 				console.log(resStatus);
+				dispatch(resetCart());
+				navigate('/home');
 			} catch (e) {
-				alert(e);
+				console.warn(e);
 			}
 		}
 	};

@@ -41,8 +41,16 @@
     {
       "recent-products": [
         {
+          "itemId": 1,
+          "itemCount": 1
+        },
+        {
           "itemId": 2,
           "itemCount": 1
+        },
+        {
+          "itemId": 3,
+          "itemCount": 2
         }
       ],
       "id": 99

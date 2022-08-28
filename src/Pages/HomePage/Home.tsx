@@ -1,6 +1,6 @@
 import React from 'react';
-import Loader from '../../components/Loader';
-import ProductCard from '../../components/ProductCard';
+import Loader from '../../Components/Loader';
+import ProductCard from '../../Components/ProductCard';
 import useFetchProducts from '../../hooks/useFetchProducts';
 import IProduct from '../../types/IProduct';
 

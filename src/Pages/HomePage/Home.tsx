@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { setConstantValue } from 'typescript';
+import React from 'react';
 import Loader from '../../components/Loader';
 import ProductCard from '../../components/ProductCard';
 import useFetchProducts from '../../hooks/useFetchProducts';
@@ -10,7 +9,8 @@ const Home = () => {
 
 	if (isFetchingProducts) return <Loader />;
 
-	if (error || !products) return <div>No products to show</div>;
+	if (error)
+		return <div className='grid h-screen place-items-center'>No products to show</div>;
 
 	return (
 		<div className='px-20 py-10 grid grid-cols-3 m-auto' style={{ maxWidth: 1700 }}>

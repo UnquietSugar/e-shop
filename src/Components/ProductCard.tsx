@@ -21,6 +21,7 @@ const ProductCard: FC<{ product: IProduct; isPreview?: boolean }> = ({
 	};
 	return (
 		<div
+			role='gridcell'
 			className='p-5 flex justify-between bg-color-b rounded mb-5 hover:brightness-105 cursor-pointer transition'
 			onClick={onGoToProduct}
 			style={{ width: 450, height: 200 }}>

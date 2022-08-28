@@ -30,7 +30,7 @@ describe('E-Shop UI tests', () => {
 			</Provider>
 		);
 
-		const buttons = screen.getAllByRole(/button/i);
+		const buttons = screen.getAllByRole(/link/i);
 		const homeBtn = buttons[0];
 		const cartBtn = buttons[1];
 

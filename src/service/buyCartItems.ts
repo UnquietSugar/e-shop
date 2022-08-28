@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ICartItem } from '../types/IUser';
+import { ICartItem } from '../Typess/IUser';
 
 const buyCartItems = (userId: number, payload: ICartItem[]) =>
 	axios.put(`/users/${userId}`, { 'recent-products': payload }).then((res) => res.status);

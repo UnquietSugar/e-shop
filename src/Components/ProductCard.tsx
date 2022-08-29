@@ -22,9 +22,9 @@ const ProductCard: FC<{ product: IProduct; isPreview?: boolean }> = ({
 	return (
 		<div
 			role='gridcell'
-			className='p-5 flex justify-between bg-color-b rounded mb-5 hover:brightness-105 cursor-pointer transition'
+			className='p-5 flex justify-center bg-color-b rounded mb-5 hover:brightness-105 cursor-pointer transition m-auto'
 			onClick={onGoToProduct}
-			style={{ width: 450, height: 200 }}>
+			style={{ minHeight: 200 }}>
 			<div className='flex flex-col justify-between mr-5'>
 				<h1>Name: {product.title}</h1>
 				{!isPreview && (
@@ -40,11 +40,10 @@ const ProductCard: FC<{ product: IProduct; isPreview?: boolean }> = ({
 					</div>
 				)}
 			</div>
-
 			<div
+				className='w-36 sm:w-64'
 				style={{
 					backgroundImage: `url("${process.env.PUBLIC_URL}/${product.image}")`,
-					width: 250,
 					backgroundPosition: 'center',
 					backgroundSize: 'contain',
 				}}

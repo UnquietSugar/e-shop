@@ -36,9 +36,9 @@ const CartItem: FC<ICartItem> = ({ cartItem, user }) => {
 	}, [setItemCount, user.cartItems, cartItem.id]);
 	return (
 		<div className='flex text-lg  py-3 border-b border-light-gray'>
-			<p className='mx-10 flex-1'>{cartItem.price}$</p>
-			<p className='mx-10 flex-1'>{cartItem.title}</p>
-			<p className='mx-10 flex-1 flex justify-between'>
+			<p className='sm:mx-10 flex-1'>{cartItem.price}$</p>
+			<p className='sm:mx-10 flex-1'>{cartItem.title}</p>
+			<p className='sm:mx-10 flex-1 flex justify-between'>
 				<button onClick={addItem} className='font-bold text-xl'>
 					+
 				</button>

@@ -21,7 +21,9 @@ const Product = () => {
 		);
 
 	return (
-		<div className='flex justify-between px-20 py-10 m-auto' style={{ maxWidth: 1000 }}>
+		<div
+			className='flex flex-col sm:flex-row justify-between px-20 py-10 m-auto'
+			style={{ maxWidth: 1000 }}>
 			<div className='flex flex-col justify-between'>
 				<h1 className='text-2xl'>Name: {product.title}</h1>
 				<p className='text-2xl'>

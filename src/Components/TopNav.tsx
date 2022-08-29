@@ -19,10 +19,10 @@ const TopNav = () => {
 		);
 
 	return (
-		<header className='flex justify-between py-3 px-10 bg-color-a font-roboto'>
-			<p className='text-white text-3xl text-bold'>THE SHOP</p>
-			<nav className='px-10'>
-				<ul className='flex list-none text-2xl'>
+		<header className='flex justify-between py-3 px-5 sm:px-10 bg-color-a font-roboto'>
+			<p className='text-white text-xl sm:text-3xl text-bold'>THE SHOP</p>
+			<nav className='sm:px-10'>
+				<ul className='flex list-none sm:text-2xl'>
 					<li className={getLiStyle('/home')}>
 						<Link to='/home' role='link'>
 							Home

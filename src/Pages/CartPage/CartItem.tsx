@@ -1,12 +1,12 @@
 import React, { FC, useEffect, useState } from 'react';
-import IProduct from '../../types/IProduct';
-import { IUser } from '../../types/IUser';
+import IProduct from 'types/IProduct';
+import { IUser } from 'types/IUser';
 import {
 	addToCart,
 	removeFromCart,
 	totalPriceAdd,
 	totalPriceSubtract,
-} from '../../redux/userSlice';
+} from 'redux/userSlice';
 import { useDispatch } from 'react-redux';
 
 interface ICartItem {

@@ -1,12 +1,12 @@
 import React, { FC, memo } from 'react';
-import { selectUser } from '../../redux/store';
+import { selectUser } from 'redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetCart } from '../../redux/userSlice';
-import useFetchSelectedProducts from '../../hooks/useFetchSelectedProducts';
-import IProduct from '../../types/IProduct';
+import { resetCart } from 'redux/userSlice';
+import useFetchSelectedProducts from 'hooks/useFetchSelectedProducts';
+import IProduct from 'types/IProduct';
 import CartItem from './CartItem';
 import Swal from 'sweetalert2';
-import buyCartItems from '../../service/buyCartItems';
+import buyCartItems from 'service/buyCartItems';
 import { useNavigate } from 'react-router-dom';
 
 const Cart: FC = () => {

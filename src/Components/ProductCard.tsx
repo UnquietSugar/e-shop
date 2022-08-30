@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import IProduct from '../types/IProduct';
-import { addToCart, totalPriceAdd } from '../redux/userSlice';
+import IProduct from 'types/IProduct';
+import { addToCart, totalPriceAdd } from 'redux/userSlice';
 import { useDispatch } from 'react-redux';
 
 const ProductCard: FC<{ product: IProduct; isPreview?: boolean }> = ({

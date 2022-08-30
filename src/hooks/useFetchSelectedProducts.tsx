@@ -1,6 +1,6 @@
 import axios from 'axios';
 import useSWRImmutable from 'swr/immutable';
-import { ICartItem } from '../types/IUser';
+import { ICartItem } from 'types/IUser';
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 

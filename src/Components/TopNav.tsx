@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
 import { matchPath, useLocation } from 'react-router-dom';
-import { selectUser } from '../redux/store';
+import { selectUser } from 'redux/store';
 import { useSelector } from 'react-redux';
 
 const TopNav = () => {

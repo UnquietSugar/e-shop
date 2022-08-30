@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRoutes } from 'react-router';
-import Cart from './Pages/CartPage/Cart';
-import Home from './Pages/HomePage/Home';
-import Product from './Pages/ProductPage/Product';
+import Cart from 'Pages/CartPage/Cart';
+import Home from 'Pages/HomePage/Home';
+import Product from 'Pages/ProductPage/Product';
 
 const Routs = () => {
 	return useRoutes([

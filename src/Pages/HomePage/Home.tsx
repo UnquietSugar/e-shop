@@ -1,8 +1,8 @@
 import React from 'react';
-import Loader from '../../Components/Loader';
-import ProductCard from '../../Components/ProductCard';
-import useFetchProducts from '../../hooks/useFetchProducts';
-import IProduct from '../../types/IProduct';
+import Loader from 'Components/Loader';
+import ProductCard from 'Components/ProductCard';
+import useFetchProducts from 'hooks/useFetchProducts';
+import IProduct from 'types/IProduct';
 
 const Home = () => {
 	const { products, isFetchingProducts, error } = useFetchProducts();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import useFetchProduct from '../../hooks/useFetchProduct';
-import { addToCart, totalPriceAdd } from '../../redux/userSlice';
+import useFetchProduct from 'hooks/useFetchProduct';
+import { addToCart, totalPriceAdd } from 'redux/userSlice';
 import { useDispatch } from 'react-redux';
 
 const Product = () => {
